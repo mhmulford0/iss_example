@@ -1,12 +1,12 @@
-var mymap = L.map('mapid').setView([0, 0], 6);
+var mymap = L.map('mapid').setView([0, 0], 3);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(mymap);
 
 const myIcon = L.icon({
     iconUrl: 'iss.png',
-    iconSize: [50, 32],
-    iconAnchor: [25, 16],
+    iconSize: [100, 64],
+    iconAnchor: [50, 32],
 });
 const marker = L.marker([0, 0], {icon: myIcon}).addTo(mymap);
 
@@ -25,7 +25,7 @@ async function getISS(){
 
 getISS();
 
-setInterval(getISS, 1100);
+setInterval(getISS, 1000);
 
 // The following code is based off a toggle menu by @Bradcomp
 // source: https://gist.github.com/Bradcomp/a9ef2ef322a8e8017443b626208999c1
